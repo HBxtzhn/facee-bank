@@ -3,7 +3,7 @@
   "bank": {
     "id": "facee-sample-bank",
     "name": "FaceE 示例题库",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "updatedAt": "2026-09-15T00:00:00Z",
     "description": "用于 FaceE 功能验收的示例题库：Java / 数据库 / 中间件 / 计算机基础 / 分布式。",
     "homepage": "https://github.com/HBxtzhn/facee-bank"
@@ -196,18 +196,6 @@
         "collection"
       ],
       "order": 20,
-      "hasAnswer": true
-    },
-    {
-      "id": "java-basic-03",
-      "title": "HashMap 的底层结构与扩容机制",
-      "difficulty": "medium",
-      "categoryId": "java-basic",
-      "tags": [
-        "java",
-        "collection"
-      ],
-      "order": 30,
       "hasAnswer": true
     },
     {
