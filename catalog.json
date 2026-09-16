@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "bank": {
-    "id": "facee-sample-bank",
-    "name": "FaceE 示例题库",
-    "version": "1.0.0",
-    "updatedAt": "2026-09-15T00:00:00Z",
-    "description": "用于 FaceE 功能验收的示例题库：Java / 数据库 / 中间件 / 计算机基础 / 分布式。",
+    "id": "facee-bank",
+    "name": "FaceE 面试题库",
+    "version": "1.1.0",
+    "updatedAt": "2026-09-16T14:25:13Z",
+    "description": "基于 JavaGuide（Apache-2.0）改编的面试题库：300 题，覆盖 Java/并发/集合/JVM/Spring/MySQL/Redis/网络/操作系统/分布式/系统设计。",
     "homepage": "https://github.com/HBxtzhn/facee-bank"
   },
   "categories": [
@@ -13,217 +13,200 @@
       "id": "java-basic",
       "name": "Java 基础",
       "order": 10,
-      "description": "语法、语言特性与常用类库"
+      "description": "语法、语言特性、IO 与新特性"
+    },
+    {
+      "id": "java-collection",
+      "name": "Java 集合",
+      "order": 20,
+      "description": "集合框架与源码实现"
+    },
+    {
+      "id": "java-concurrent",
+      "name": "Java 并发",
+      "order": 30,
+      "description": "线程、锁、JUC 与并发模型"
     },
     {
       "id": "jvm",
       "name": "JVM",
-      "order": 20,
+      "order": 40,
       "description": "内存结构、垃圾回收与调优"
     },
     {
       "id": "spring",
       "name": "Spring",
-      "order": 30,
-      "description": "IoC、AOP 与事务"
+      "order": 50,
+      "description": "IoC、AOP 与 Spring Boot"
     },
     {
       "id": "mysql",
       "name": "MySQL",
-      "order": 40,
-      "description": "索引、事务与锁"
+      "order": 60,
+      "description": "索引、事务、锁与优化"
     },
     {
       "id": "redis",
       "name": "Redis",
-      "order": 50,
+      "order": 70,
       "description": "缓存、持久化与集群"
-    },
-    {
-      "id": "mq",
-      "name": "消息队列",
-      "order": 60,
-      "description": "顺序、幂等与可靠投递"
     },
     {
       "id": "network",
       "name": "计算机网络",
-      "order": 70,
-      "description": "TCP/IP 与 HTTP"
+      "order": 80,
+      "description": "TCP/IP、HTTP 与网络安全"
     },
     {
       "id": "os",
       "name": "操作系统",
-      "order": 80,
-      "description": "进程、内存与 IO"
+      "order": 90,
+      "description": "进程、内存、IO 与文件系统"
     },
     {
       "id": "distributed",
       "name": "分布式系统",
-      "order": 90,
-      "description": "一致性、事务与 ID"
+      "order": 100,
+      "description": "一致性、高可用与高性能"
+    },
+    {
+      "id": "system-design",
+      "name": "系统设计",
+      "order": 110,
+      "description": "架构基础、安全与设计题"
     }
   ],
   "tags": [
     {
-      "id": "backend",
-      "name": "后端",
-      "parentId": null,
-      "order": 10
-    },
-    {
       "id": "java",
       "name": "Java",
-      "parentId": "backend",
-      "order": 20
-    },
-    {
-      "id": "jvm",
-      "name": "JVM",
-      "parentId": "java",
-      "order": 21
+      "parentId": null,
+      "order": 10
     },
     {
       "id": "concurrent",
       "name": "并发",
       "parentId": "java",
-      "order": 22
+      "order": 11
     },
     {
       "id": "collection",
       "name": "集合",
       "parentId": "java",
-      "order": 23
+      "order": 12
+    },
+    {
+      "id": "jvm",
+      "name": "JVM",
+      "parentId": "java",
+      "order": 13
     },
     {
       "id": "spring",
       "name": "Spring",
       "parentId": "java",
-      "order": 24
-    },
-    {
-      "id": "transaction",
-      "name": "事务",
-      "parentId": "spring",
-      "order": 25
+      "order": 14
     },
     {
       "id": "database",
       "name": "数据库",
       "parentId": null,
-      "order": 30
+      "order": 20
     },
     {
       "id": "mysql",
       "name": "MySQL",
       "parentId": "database",
-      "order": 31
-    },
-    {
-      "id": "index",
-      "name": "索引",
-      "parentId": "mysql",
-      "order": 32
+      "order": 21
     },
     {
       "id": "redis",
       "name": "Redis",
       "parentId": "database",
-      "order": 33
+      "order": 22
     },
     {
-      "id": "middleware",
-      "name": "中间件",
+      "id": "cs-basic",
+      "name": "计算机基础",
+      "parentId": null,
+      "order": 30
+    },
+    {
+      "id": "network",
+      "name": "计算机网络",
+      "parentId": "cs-basic",
+      "order": 31
+    },
+    {
+      "id": "os",
+      "name": "操作系统",
+      "parentId": "cs-basic",
+      "order": 32
+    },
+    {
+      "id": "distributed",
+      "name": "分布式",
       "parentId": null,
       "order": 40
     },
     {
       "id": "mq",
       "name": "消息队列",
-      "parentId": "middleware",
-      "order": 41
-    },
-    {
-      "id": "cache",
-      "name": "缓存",
-      "parentId": "middleware",
-      "order": 42
-    },
-    {
-      "id": "cs-basic",
-      "name": "计算机基础",
       "parentId": null,
       "order": 50
-    },
-    {
-      "id": "network",
-      "name": "计算机网络",
-      "parentId": "cs-basic",
-      "order": 51
-    },
-    {
-      "id": "os",
-      "name": "操作系统",
-      "parentId": "cs-basic",
-      "order": 52
-    },
-    {
-      "id": "distributed",
-      "name": "分布式",
-      "parentId": null,
-      "order": 60
     }
   ],
   "questions": [
     {
-      "id": "java-basic-01",
-      "title": "== 和 equals 的区别是什么？",
+      "id": "distributed-001",
+      "title": "拜占庭故障和普通故障有什么区别？",
       "difficulty": "easy",
-      "categoryId": "java-basic",
+      "categoryId": "distributed",
       "tags": [
-        "java"
+        "distributed"
       ],
       "order": 10,
       "hasAnswer": true
     },
     {
-      "id": "java-basic-02",
-      "title": "String、StringBuilder 和 StringBuffer 怎么选？",
-      "difficulty": "easy",
+      "id": "java-basic-001",
+      "title": "包装类型的缓存机制了解么？",
+      "difficulty": "hard",
       "categoryId": "java-basic",
+      "tags": [
+        "java",
+        "redis"
+      ],
+      "order": 10,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-001",
+      "title": "比较 HashSet、LinkedHashSet 和 TreeSet 三者的异同",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
       "tags": [
         "java",
         "collection"
       ],
-      "order": 20,
+      "order": 10,
       "hasAnswer": true
     },
     {
-      "id": "java-basic-03",
-      "title": "HashMap 的底层结构与扩容机制",
+      "id": "java-concurrent-001",
+      "title": "不同业务要不要隔离线程池？",
       "difficulty": "medium",
-      "categoryId": "java-basic",
+      "categoryId": "java-concurrent",
       "tags": [
         "java",
-        "collection"
+        "concurrent"
       ],
-      "order": 30,
+      "order": 10,
       "hasAnswer": true
     },
     {
-      "id": "java-basic-04",
-      "title": "Java 中的异常体系是怎样的？",
-      "difficulty": "easy",
-      "categoryId": "java-basic",
-      "tags": [
-        "java"
-      ],
-      "order": 40,
-      "hasAnswer": false
-    },
-    {
-      "id": "jvm-memory-01",
-      "title": "JVM 运行时数据区包含哪些部分？",
+      "id": "jvm-001",
+      "title": "复习 JVM 时先抓住哪些问题？",
       "difficulty": "medium",
       "categoryId": "jvm",
       "tags": [
@@ -234,136 +217,174 @@
       "hasAnswer": true
     },
     {
-      "id": "jvm-gc-01",
-      "title": "如何判断一个对象可以被回收？",
-      "difficulty": "medium",
-      "categoryId": "jvm",
-      "tags": [
-        "java",
-        "jvm"
-      ],
-      "order": 20,
-      "hasAnswer": true
-    },
-    {
-      "id": "jvm-gc-02",
-      "title": "常见垃圾回收器怎么选？（含 G1 调优）",
-      "difficulty": "hard",
-      "categoryId": "jvm",
-      "tags": [
-        "java",
-        "jvm"
-      ],
-      "order": 30,
-      "hasAnswer": true,
-      "followupCount": 3
-    },
-    {
-      "id": "jvm-classload-01",
-      "title": "类加载过程与双亲委派模型",
-      "difficulty": "medium",
-      "categoryId": "jvm",
-      "tags": [
-        "java",
-        "jvm"
-      ],
-      "order": 40,
-      "hasAnswer": true
-    },
-    {
-      "id": "spring-tx-01",
-      "title": "Spring 事务传播机制有哪些？",
-      "difficulty": "medium",
-      "categoryId": "spring",
-      "tags": [
-        "java",
-        "spring",
-        "transaction"
-      ],
-      "order": 10,
-      "hasAnswer": true,
-      "followupCount": 3
-    },
-    {
-      "id": "spring-tx-02",
-      "title": "Spring 事务在什么情况下会失效？",
-      "difficulty": "hard",
-      "categoryId": "spring",
-      "tags": [
-        "java",
-        "spring",
-        "transaction"
-      ],
-      "order": 20,
-      "hasAnswer": true
-    },
-    {
-      "id": "spring-ioc-01",
-      "title": "Spring Bean 的生命周期与循环依赖",
-      "difficulty": "hard",
-      "categoryId": "spring",
-      "tags": [
-        "java",
-        "spring"
-      ],
-      "order": 30,
-      "hasAnswer": true
-    },
-    {
-      "id": "mysql-index-01",
-      "title": "为什么 MySQL 用 B+ 树做索引？",
-      "difficulty": "hard",
-      "categoryId": "mysql",
-      "tags": [
-        "database",
-        "mysql",
-        "index"
-      ],
-      "order": 10,
-      "hasAnswer": true
-    },
-    {
-      "id": "mysql-tx-01",
-      "title": "MySQL 的四种隔离级别与 MVCC",
-      "difficulty": "hard",
-      "categoryId": "mysql",
-      "tags": [
-        "database",
-        "mysql",
-        "transaction"
-      ],
-      "order": 20,
-      "hasAnswer": true
-    },
-    {
-      "id": "mysql-lock-01",
-      "title": "MySQL 有哪些锁？如何排查死锁？",
+      "id": "mysql-001",
+      "title": "备份到底解决什么问题？",
       "difficulty": "medium",
       "categoryId": "mysql",
       "tags": [
         "database",
         "mysql"
       ],
-      "order": 30,
+      "order": 10,
       "hasAnswer": true
     },
     {
-      "id": "redis-cache-01",
-      "title": "Redis 为什么这么快？",
-      "difficulty": "medium",
-      "categoryId": "redis",
+      "id": "network-001",
+      "title": "常见的对称加密算法有哪些？",
+      "difficulty": "easy",
+      "categoryId": "network",
       "tags": [
-        "database",
-        "redis",
-        "cache"
+        "cs-basic",
+        "network"
       ],
       "order": 10,
       "hasAnswer": true
     },
     {
-      "id": "redis-persist-01",
-      "title": "RDB 和 AOF 怎么选？",
+      "id": "os-001",
+      "title": "操作系统主要有哪些功能？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 10,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-001",
+      "title": "本地缓存的方案有哪些？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 10,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-001",
+      "title": "@Autowired 和 @Resource 的区别是什么？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 10,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-001",
+      "title": "多服务器节点下 Session-Cookie 方案如何做？",
       "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 10,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-002",
+      "title": "拜占庭将军问题和区块链是什么关系？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-002",
+      "title": "标识符和关键字的区别是什么？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-002",
+      "title": "集合中的 fail-fast 和 fail-safe 是什么？",
+      "difficulty": "hard",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-002",
+      "title": "程序计数器为什么是私有的？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-002",
+      "title": "故障复盘应该记录什么？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-002",
+      "title": "备份方式有哪些？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-002",
+      "title": "常见的非对称加密算法有哪些？",
+      "difficulty": "easy",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-002",
+      "title": "产生死锁的四个必要条件是什么？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent",
+        "mysql"
+      ],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-002",
+      "title": "本地缓存有什么痛点？",
+      "difficulty": "easy",
       "categoryId": "redis",
       "tags": [
         "database",
@@ -373,93 +394,1406 @@
       "hasAnswer": true
     },
     {
-      "id": "redis-cluster-01",
-      "title": "缓存穿透、击穿、雪崩怎么解决？",
-      "difficulty": "medium",
-      "categoryId": "redis",
+      "id": "spring-002",
+      "title": "@Component 和 @Bean 的区别是什么？",
+      "difficulty": "easy",
+      "categoryId": "spring",
       "tags": [
-        "database",
-        "redis",
-        "cache"
-      ],
-      "order": 30,
-      "hasAnswer": true
-    },
-    {
-      "id": "mq-kafka-01",
-      "title": "Kafka 如何保证消息不丢失？",
-      "difficulty": "hard",
-      "categoryId": "mq",
-      "tags": [
-        "middleware",
-        "mq"
-      ],
-      "order": 10,
-      "hasAnswer": true
-    },
-    {
-      "id": "mq-order-01",
-      "title": "如何保证消息的顺序性？",
-      "difficulty": "medium",
-      "categoryId": "mq",
-      "tags": [
-        "middleware",
-        "mq"
+        "java",
+        "spring"
       ],
       "order": 20,
       "hasAnswer": true
     },
     {
-      "id": "mq-idempotent-01",
-      "title": "消息重复消费如何保证幂等？",
+      "id": "system-design-002",
+      "title": "认证 (Authentication) 和授权 (Authorization)的区别是什么？",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 20,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-003",
+      "title": "拜占庭将军问题是什么？",
       "difficulty": "medium",
-      "categoryId": "mq",
+      "categoryId": "distributed",
       "tags": [
-        "middleware",
-        "mq"
+        "distributed"
       ],
       "order": 30,
       "hasAnswer": true
     },
     {
-      "id": "net-tcp-01",
-      "title": "TCP 三次握手与四次挥手",
-      "difficulty": "medium",
-      "categoryId": "network",
+      "id": "java-basic-003",
+      "title": "常见序列化协议有哪些？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
       "tags": [
-        "cs-basic",
-        "network"
+        "java"
       ],
-      "order": 10,
+      "order": 30,
       "hasAnswer": true
     },
     {
-      "id": "net-http-01",
-      "title": "HTTP/1.1、HTTP/2、HTTP/3 有什么区别？",
-      "difficulty": "medium",
-      "categoryId": "network",
+      "id": "java-collection-003",
+      "title": "如何选用集合？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
       "tags": [
-        "cs-basic",
-        "network"
+        "java",
+        "collection"
       ],
-      "order": 10,
+      "order": 30,
       "hasAnswer": true
     },
     {
-      "id": "net-http2-01",
-      "title": "What happens when you type a URL into a browser?",
+      "id": "java-concurrent-003",
+      "title": "单核 CPU 上运行多个线程效率一定会高吗？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 30,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-003",
+      "title": "接口很慢但 CPU 不高怎么排查？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 30,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-003",
+      "title": "表级锁和行级锁了解吗？有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql",
+        "concurrent"
+      ],
+      "order": 30,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-003",
+      "title": "常见的散列算法有哪些？",
       "difficulty": "easy",
       "categoryId": "network",
       "tags": [
         "cs-basic",
         "network"
       ],
-      "order": 20,
+      "order": 30,
       "hasAnswer": true
     },
     {
-      "id": "os-process-01",
-      "title": "进程和线程的区别？协程又是什么？",
+      "id": "os-003",
+      "title": "常见 IPC 怎么选？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "network"
+      ],
+      "order": 30,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-003",
+      "title": "除了 Redis，你还知道其他分布式缓存方案吗？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "distributed"
+      ],
+      "order": 30,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-003",
+      "title": "@Lazy 能解决循环依赖吗？",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 30,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-003",
+      "title": "如果没有 Cookie 的话 Session 还能用吗？",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 30,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-004",
+      "title": "常见的分布式系统有哪些？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-004",
+      "title": "超过 long 整型的数据应该如何表示？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-004",
+      "title": "什么是 BlockingQueue？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-004",
+      "title": "单核 CPU 支持 Java 多线程吗？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-004",
+      "title": "面试中怎么回答线上故障排查？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-004",
+      "title": "并发事务带来了哪些问题?",
+      "difficulty": "medium",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql",
+        "concurrent",
+        "spring"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-004",
+      "title": "超时重传如何实现？超时重传时间怎么确定？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-004",
+      "title": "常见的操作系统有哪些？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-004",
+      "title": "大量 key 集中过期怎么办？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "os"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-004",
+      "title": "@Transactional(rollbackFor = Exception.class)注解了解吗？",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring",
+        "mysql"
+      ],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-004",
+      "title": "如何防止 JWT 被篡改？",
+      "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 40,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-005",
+      "title": "常见的分片算法有哪些？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "mysql"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-005",
+      "title": "成员变量与局部变量的区别？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-005",
+      "title": "什么是 LinkedHashMap？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-005",
+      "title": "动态调参能解决什么问题？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-005",
+      "title": "内存持续上涨和 OOM 怎么排查？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-005",
+      "title": "并发事务的控制方式有哪些？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql",
+        "concurrent",
+        "spring"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-005",
+      "title": "传输层有哪些常见的协议？",
+      "difficulty": "easy",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-005",
+      "title": "常见的磁盘调度算法有哪些？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-005",
+      "title": "多级缓存一致性如何保证？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "distributed"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-005",
+      "title": "多个切面的执行顺序如何控制？",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-005",
+      "title": "如何基于 JWT 进行身份验证？",
+      "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 50,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-006",
+      "title": "常见的配置中心有哪些？如何选择？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-006",
+      "title": "创建一个对象用什么运算符？对象实例与对象引用有何不同？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-006",
+      "title": "说说 List, Set, Queue, Map 四者的区别？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-006",
+      "title": "队列堆积后怎么处理？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent",
+        "jvm"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-006",
+      "title": "如何判断一个常量是废弃常量？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-006",
+      "title": "不可重复读和幻读有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql",
+        "spring"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-006",
+      "title": "从输入 URL 到页面展示到底发生了什么？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-006",
+      "title": "常见的内存管理方式有哪些？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-006",
+      "title": "分布式缓存的方案有哪些？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "distributed"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-006",
+      "title": "构造函数注入还是 Setter 注入？",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-006",
+      "title": "如何加强 JWT 的安全性？",
+      "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 60,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-007",
+      "title": "常见的消息队列有哪些？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "mq"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-007",
+      "title": "反射的应用场景？",
+      "difficulty": "hard",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-007",
+      "title": "为什么需要分段计数",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-007",
+      "title": "公平锁和非公平锁有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent",
+        "mysql"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-007",
+      "title": "如何判断一个对象需要被干掉",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-007",
+      "title": "当前读和快照读有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql",
+        "concurrent"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-007",
+      "title": "大量 TIMEWAIT 到底有没有问题？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-007",
+      "title": "常见的页面置换算法有哪些？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-007",
+      "title": "购物车信息用 String 还是 Hash 存储更好呢?",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-007",
+      "title": "将一个类声明为 Bean 的注解有哪些?",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-007",
+      "title": "如何使用 Session-Cookie 方案进行身份验证？",
+      "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 70,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-008",
+      "title": "常见的重试策略有哪些？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-008",
+      "title": "反射的应用场景了解么？",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-008",
+      "title": "为什么要使用集合？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-008",
+      "title": "还有哪些容易忽略的问题？",
+      "difficulty": "easy",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-008",
+      "title": "如何判断一个类是无用的类？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-008",
+      "title": "非聚簇索引一定回表查询吗（覆盖索引）？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-008",
+      "title": "第 2 次握手已经传回 ACK，为什么还要传回 SYN？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-008",
+      "title": "程序、进程和线程分别是什么？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-008",
+      "title": "缓存预热如何实现？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-008",
+      "title": "如何对密码进行加密？",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-008",
+      "title": "如何在项目中使用 Cookie 呢？",
+      "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 80,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-009",
+      "title": "常见限流算法有哪些？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-009",
+      "title": "反射有什么优缺点？",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-009",
+      "title": "ArrayBlockingQueue 的实现原理是什么？",
+      "difficulty": "hard",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-009",
+      "title": "何为进程？",
+      "difficulty": "easy",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-009",
+      "title": "如何宣告一个对象的真正死亡",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-009",
+      "title": "共享锁和排他锁呢？",
+      "difficulty": "medium",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql",
+        "concurrent"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-009",
+      "title": "第三方机构和证书机制有什么用？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-009",
+      "title": "单级页表为什么不够用？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-009",
+      "title": "哪些情况可能会导致 Redis 阻塞？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-009",
+      "title": "如何实现一个 Starter",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-009",
+      "title": "什么是 Cookie ? Cookie 的作用是什么?",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 90,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-010",
+      "title": "超时时间应该如何设置？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-010",
+      "title": "泛型的使用方式有哪几种？",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-010",
+      "title": "ArrayBlockingQueue 和 ConcurrentLinkedQueue 有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-010",
+      "title": "何为线程？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-010",
+      "title": "收到告警后先确认什么？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-010",
+      "title": "恢复演练应该怎么做？",
+      "difficulty": "medium",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-010",
+      "title": "端口号到底归谁管？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-010",
+      "title": "单级页表有什么问题？为什么需要多级页表？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-010",
+      "title": "如果我想判断一个元素是否不在海量元素集合中，用什么数据类型？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "collection"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-010",
+      "title": "如何使用 JPA 在数据库中非持久化一个字段？",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring",
+        "mysql",
+        "redis"
+      ],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-010",
+      "title": "什么是 OAuth 2.0？",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 100,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-011",
+      "title": "达成共识到底要满足什么？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-011",
+      "title": "泛型有哪些限制？为什么？",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-011",
+      "title": "ArrayBlockingQueue 和 LinkedBlockingQueue 有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-011",
+      "title": "核心线程空闲时处于什么状态？",
+      "difficulty": "hard",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-011",
+      "title": "数据库连接池耗尽怎么排查？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-011",
+      "title": "逻辑备份和物理备份怎么选？",
+      "difficulty": "medium",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-011",
+      "title": "公司内部为什么更常见 RPC？",
+      "difficulty": "hard",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-011",
+      "title": "段表有什么用？地址翻译过程是怎样的？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-011",
+      "title": "如何保证缓存和数据库数据的一致性？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "distributed"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-011",
+      "title": "如何优雅更换系统使用的加密算法？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-011",
+      "title": "什么是 SSO？",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 110,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-012",
+      "title": "大规模分布式系统如何降级？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-012",
+      "title": "构造方法有哪些特点？是否可被 override?",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-012",
+      "title": "ArrayBlockingQueue 是什么？它的特点是什么？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-012",
+      "title": "可以直接调用 Thread 类的 run 方法吗？",
+      "difficulty": "easy",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-012",
+      "title": "下游接口超时怎么排查？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-012",
+      "title": "哪些字段适合创建索引？",
+      "difficulty": "medium",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-012",
+      "title": "客户端为什么更容易撞到端口限制？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-012",
+      "title": "多级页表怎么省空间？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-012",
+      "title": "如何查看 Redis 内存碎片的信息？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-012",
+      "title": "什么是 AOP？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-012",
+      "title": "什么是数据脱敏",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 120,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-013",
+      "title": "单机限流怎么做？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-013",
+      "title": "何为 I/O?",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-013",
+      "title": "ArrayList 插入和删除元素的时间复杂度？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-013",
+      "title": "可中断锁和不可中断锁有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent",
+        "mysql"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-013",
+      "title": "线程池队列堆积怎么排查？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm",
+        "concurrent"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-013",
+      "title": "能用 MySQL 直接存储文件（比如图片）吗？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-013",
+      "title": "快速重传是如何工作的？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-013",
+      "title": "多线程一定能提高性能吗？",
       "difficulty": "easy",
       "categoryId": "os",
       "tags": [
@@ -467,66 +1801,1907 @@
         "os",
         "concurrent"
       ],
-      "order": 10,
+      "order": 130,
       "hasAnswer": true
     },
     {
-      "id": "os-memory-01",
-      "title": "虚拟内存与页面置换算法",
+      "id": "redis-013",
+      "title": "如何处理 bigkey？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-013",
+      "title": "什么是 IoC?",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-013",
+      "title": "忘记密码流程还要注意什么？",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [
+        "network"
+      ],
+      "order": 130,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-014",
+      "title": "到底什么是共识算法？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-014",
+      "title": "何为反射？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-014",
+      "title": "ArrayList 和 Array（数组）的区别？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-014",
+      "title": "面试中怎么回答线程池参数配置？",
+      "difficulty": "easy",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-014",
+      "title": "消息队列积压怎么排查？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm",
+        "mq"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-014",
+      "title": "如何分析 EXPLAIN 结果？",
+      "difficulty": "hard",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-014",
+      "title": "面试时怎么回答？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-014",
+      "title": "分段、分页和段页式有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-014",
+      "title": "如何发现 bigkey？",
+      "difficulty": "hard",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-014",
+      "title": "什么是 Spring 框架?",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-014",
+      "title": "为什么基于 Cookie 的认证更需要关注 CSRF？",
+      "difficulty": "hard",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 140,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-015",
+      "title": "队列模型和主题模型是什么？",
+      "difficulty": "hard",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "mq"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-015",
+      "title": "何谓 SPI?",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-015",
+      "title": "ArrayList 可以添加 null 值吗？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-015",
+      "title": "请简要描述线程与进程的关系，区别及优缺点？",
+      "difficulty": "easy",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-015",
+      "title": "修复以后怎么验证？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-015",
+      "title": "如何分析 SQL 的性能？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-015",
+      "title": "面试怎么回答：HTTPS 握手里的 RSA 和 ECDHE，到底差在哪？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-015",
+      "title": "分段机制为什么会导致内存外部碎片？",
       "difficulty": "medium",
       "categoryId": "os",
       "tags": [
         "cs-basic",
         "os"
       ],
-      "order": 20,
+      "order": 150,
       "hasAnswer": true
     },
     {
-      "id": "os-io-01",
-      "title": "五种 IO 模型与零拷贝",
+      "id": "redis-015",
+      "title": "如何发现 hotkey？",
       "difficulty": "hard",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-015",
+      "title": "什么是 Spring Bean？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-015",
+      "title": "为什么需要加盐？",
+      "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 150,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-016",
+      "title": "队列模型了解吗？Kafka 的消息模型知道吗？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "mq"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-016",
+      "title": "何谓注解？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-016",
+      "title": "Arraylist 与 LinkedList 区别？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-016",
+      "title": "任务超时后会自动停止吗？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-016",
+      "title": "怎么判断是内存泄漏还是正常增长？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-016",
+      "title": "如何获取执行计划？",
+      "difficulty": "hard",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-016",
+      "title": "面试怎么回答？",
+      "difficulty": "easy",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-016",
+      "title": "分段是怎么映射的？",
+      "difficulty": "medium",
       "categoryId": "os",
       "tags": [
         "cs-basic",
         "os"
       ],
-      "order": 30,
+      "order": 160,
       "hasAnswer": true
     },
     {
-      "id": "dist-cap-01",
-      "title": "CAP 与 BASE 理论怎么落地？",
+      "id": "redis-016",
+      "title": "如何基于 Redis 实现延时任务？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-016",
+      "title": "什么是 SpringBoot 自动装配？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-016",
+      "title": "重置密码时如何判断新密码与旧密码相同？",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 160,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-017",
+      "title": "分布式 ID 需要满足哪些要求?",
       "difficulty": "medium",
       "categoryId": "distributed",
       "tags": [
         "distributed"
       ],
-      "order": 10,
+      "order": 170,
       "hasAnswer": true
     },
     {
-      "id": "dist-tx-01",
-      "title": "分布式事务有哪些方案？",
-      "difficulty": "hard",
-      "categoryId": "distributed",
+      "id": "java-basic-017",
+      "title": "基本类型和包装类型的区别？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
       "tags": [
-        "distributed",
-        "transaction"
+        "java"
       ],
-      "order": 20,
+      "order": 170,
       "hasAnswer": true
     },
     {
-      "id": "dist-id-01",
-      "title": "分布式 ID 生成方案怎么选？",
+      "id": "java-collection-017",
+      "title": "BlockingQueue 的实现类有哪些？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-017",
+      "title": "如果希望饱和时尽量不丢弃任务，应该选择哪个拒绝策略？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-017",
+      "title": "怎样快速判断问题在哪一层？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-017",
+      "title": "如何选择？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-017",
+      "title": "那 HTTP 就不适合内部调用吗？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-017",
+      "title": "分页机制和分段机制有哪些共同点和区别？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-017",
+      "title": "如何解决 hotkey？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-017",
+      "title": "事务的特性（ACID）了解么?",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring",
+        "mysql"
+      ],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-017",
+      "title": "Cookie 和 Session 有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 170,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-018",
+      "title": "分布式锁的常见实现方式有哪些？",
       "difficulty": "medium",
       "categoryId": "distributed",
       "tags": [
         "distributed",
-        "database"
+        "concurrent",
+        "mysql"
       ],
-      "order": 30,
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-018",
+      "title": "接口和抽象类有什么共同点和区别？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-018",
+      "title": "ConcurrentHashMap 能保证复合操作的原子性吗？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection",
+        "concurrent"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-018",
+      "title": "如何保证变量的可见性？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-018",
+      "title": "止血和留证怎么取舍？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-018",
+      "title": "如何选择索引列的顺序",
+      "difficulty": "medium",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-018",
+      "title": "能 Ping 通，TCP 就一定能连通吗？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-018",
+      "title": "分页是怎么完成地址转换的？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-018",
+      "title": "如何解决 Redis 事务的缺陷？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "spring",
+        "mysql"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-018",
+      "title": "说说自己对于 Spring MVC 了解?",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-018",
+      "title": "JWT 解析和 JWT 验证有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 180,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-019",
+      "title": "分布式锁应该具备哪些条件？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "concurrent",
+        "mysql"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-019",
+      "title": "介绍一下动态代理在框架中的实际应用场景",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-019",
+      "title": "ConcurrentHashMap 为什么 key 和 value 不能为 null？",
+      "difficulty": "hard",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection",
+        "concurrent"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-019",
+      "title": "如何创建线程？",
+      "difficulty": "easy",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-019",
+      "title": "CPU 飙高怎么排查？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-019",
+      "title": "什么是 MySQL？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-019",
+      "title": "能否被降级回 RSA？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-019",
+      "title": "分页又是怎么映射的？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-019",
+      "title": "如何清理 Redis 内存碎片？",
+      "difficulty": "medium",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-019",
+      "title": "谈谈自己对于 AOP 的了解",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-019",
+      "title": "JWT 是什么？",
+      "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 190,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-020",
+      "title": "分布式系统、集群和微服务有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "redis"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-020",
+      "title": "静态变量有什么作用？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-020",
+      "title": "Copy-On-Write 的思想是什么？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-020",
+      "title": "如何创建线程池？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-020",
+      "title": "CPU 不高但 Load 很高怎么办？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-020",
+      "title": "什么是 SQL？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-020",
+      "title": "你知道哪些基于 TCP/UDP 的协议？",
+      "difficulty": "hard",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-020",
+      "title": "换页机制有什么用？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-020",
+      "title": "如何使用 Redis 事务？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "spring",
+        "mysql"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-020",
+      "title": "统一异常处理怎么做？",
+      "difficulty": "hard",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-020",
+      "title": "JWT 由哪些部分组成？",
+      "difficulty": "hard",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 200,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-021",
+      "title": "分布式系统难在哪里？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-021",
+      "title": "静态代理和动态代理有什么区别？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-021",
+      "title": "CopyOnWriteArrayList 到底有什么厉害之处？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-021",
+      "title": "如何创建虚拟线程？",
+      "difficulty": "hard",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-021",
+      "title": "Full GC 频繁怎么排查？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-021",
+      "title": "什么是覆盖索引？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-021",
+      "title": "如果第二次挥手时服务端的 ACK 没有送达客户端，会怎样？",
+      "difficulty": "easy",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-021",
+      "title": "进程的调度算法有哪些？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-021",
+      "title": "如何选择 RDB 和 AOF？",
+      "difficulty": "hard",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-021",
+      "title": "有哪些控制请求访问权限的方法？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "system-design-021",
+      "title": "RBAC 模型了解吗？",
+      "difficulty": "medium",
+      "categoryId": "system-design",
+      "tags": [],
+      "order": 210,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-022",
+      "title": "分布式系统为什么要协调？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-022",
+      "title": "静态方法和实例方法有何不同？",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-022",
+      "title": "DelayQueue 的实现原理是什么？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-022",
+      "title": "如何动态修改线程池的参数？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-022",
+      "title": "Redis 变慢怎么排查？",
+      "difficulty": "medium",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm",
+        "redis"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-022",
+      "title": "什么是关系型数据库？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-022",
+      "title": "如何防护 HTTP Flood？",
+      "difficulty": "easy",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-022",
+      "title": "进程和线程的区别是什么？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-022",
+      "title": "如何找到慢查询命令？",
+      "difficulty": "hard",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-022",
+      "title": "注入 Bean 的方式有哪些？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 220,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-023",
+      "title": "分布式系统有哪些典型特征？",
+      "difficulty": "easy",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-023",
+      "title": "静态方法为什么不能调用非静态成员？",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-023",
+      "title": "DelayQueue 的使用场景有哪些？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-023",
+      "title": "如何给线程池命名？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "jvm-023",
+      "title": "Young GC 频繁怎么排查？",
+      "difficulty": "easy",
+      "categoryId": "jvm",
+      "tags": [
+        "java",
+        "jvm"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-023",
+      "title": "什么是事务？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql",
+        "spring"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-023",
+      "title": "如何缓解 IP 欺骗？",
+      "difficulty": "easy",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-023",
+      "title": "进程和线程的区别怎么总结？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-023",
+      "title": "什么是 AOF 持久化？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-023",
+      "title": "注入 Bean 的注解有哪些？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 230,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-024",
+      "title": "分布式系统怎么学？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-024",
+      "title": "哪些金额适合用 BigDecimal？",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-024",
+      "title": "DelayQueue 和 Timer/TimerTask 的区别是什么？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-024",
+      "title": "如何加入队列",
+      "difficulty": "hard",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-024",
+      "title": "什么是数据库事务？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql",
+        "spring"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-024",
+      "title": "如何缓解 SYN Flood？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-024",
+      "title": "进程间的通信方式有哪些？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-024",
+      "title": "什么是 bigkey？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-024",
+      "title": "AOP 常见的通知类型有哪些？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 240,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-025",
+      "title": "分布式限流怎么做？",
+      "difficulty": "hard",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-025",
+      "title": "哪些金额适合用 Long？",
+      "difficulty": "medium",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-025",
+      "title": "DelayQueue 中 Delayed 接口的作用是什么？",
+      "difficulty": "easy",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-025",
+      "title": "如何检测死锁？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent",
+        "mysql"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-025",
+      "title": "什么是执行计划？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-025",
+      "title": "如何获取客户端真实 IP？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-025",
+      "title": "进程拥有哪些资源？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-025",
+      "title": "什么是 hotkey？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-025",
+      "title": "AOP 的应用场景有哪些？",
+      "difficulty": "easy",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 250,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-026",
+      "title": "分库分表后，数据怎么迁移呢？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "mysql"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-026",
+      "title": "你更倾向于使用 Checked Exception 还是 Unchecked Exception？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-026",
+      "title": "HashMap 常见的遍历方式？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection",
+        "concurrent"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-026",
+      "title": "如何解锁",
+      "difficulty": "hard",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent",
+        "mysql"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-026",
+      "title": "手机号存储用 INT 还是 VARCHAR？",
+      "difficulty": "hard",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-026",
+      "title": "如何判断邮箱是否真正存在？",
+      "difficulty": "easy",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-026",
+      "title": "进程有哪几种状态？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-026",
+      "title": "什么是 RDB 持久化？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-026",
+      "title": "AOP 解决了什么问题？",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 260,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-027",
+      "title": "分库分表会带来什么问题呢？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "mysql"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-027",
+      "title": "如果一个类没有声明构造方法，该程序能正确执行吗？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-027",
+      "title": "HashMap 为什么线程不安全？",
+      "difficulty": "hard",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection",
+        "concurrent"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-027",
+      "title": "如何禁止指令重排序？",
+      "difficulty": "hard",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-027",
+      "title": "数值时间戳是更好的选择吗？",
+      "difficulty": "medium",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-027",
+      "title": "如何应对 DDoS 攻击？",
+      "difficulty": "medium",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-027",
+      "title": "进程有哪些常见状态？",
+      "difficulty": "easy",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os",
+        "concurrent"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-027",
+      "title": "什么是 Redis 事务？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis",
+        "spring",
+        "mysql"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-027",
+      "title": "AOP 实现方式有哪些？",
+      "difficulty": "hard",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 270,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-028",
+      "title": "分库分表有没有什么比较推荐的方案？",
+      "difficulty": "medium",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "mysql"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-028",
+      "title": "如果有些字段不想进行序列化怎么办？",
+      "difficulty": "easy",
+      "categoryId": "java-basic",
+      "tags": [
+        "java",
+        "mysql"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-028",
+      "title": "HashSet 如何检查重复？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-028",
+      "title": "如何跨线程传递 ThreadLocal 的值？",
+      "difficulty": "hard",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "mysql-028",
+      "title": "索引失效的原因有哪些？",
+      "difficulty": "easy",
+      "categoryId": "mysql",
+      "tags": [
+        "database",
+        "mysql"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "network-028",
+      "title": "三次握手过程中可以携带数据吗？",
+      "difficulty": "easy",
+      "categoryId": "network",
+      "tags": [
+        "cs-basic",
+        "network"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "os-028",
+      "title": "空闲空间怎么管理？",
+      "difficulty": "medium",
+      "categoryId": "os",
+      "tags": [
+        "cs-basic",
+        "os"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "redis-028",
+      "title": "什么是 Redis Module？有什么用？",
+      "difficulty": "easy",
+      "categoryId": "redis",
+      "tags": [
+        "database",
+        "redis"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "spring-028",
+      "title": "AOP 为什么叫面向切面编程？",
+      "difficulty": "medium",
+      "categoryId": "spring",
+      "tags": [
+        "java",
+        "spring"
+      ],
+      "order": 280,
+      "hasAnswer": true
+    },
+    {
+      "id": "distributed-029",
+      "title": "分片键如何选择？",
+      "difficulty": "hard",
+      "categoryId": "distributed",
+      "tags": [
+        "distributed",
+        "mysql"
+      ],
+      "order": 290,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-basic-029",
+      "title": "如何创建一个 Optional",
+      "difficulty": "hard",
+      "categoryId": "java-basic",
+      "tags": [
+        "java"
+      ],
+      "order": 290,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-collection-029",
+      "title": "JDK 1.7 和 JDK 1.8 的 ConcurrentHashMap 实现有什么不同？",
+      "difficulty": "medium",
+      "categoryId": "java-collection",
+      "tags": [
+        "java",
+        "collection",
+        "concurrent"
+      ],
+      "order": 290,
+      "hasAnswer": true
+    },
+    {
+      "id": "java-concurrent-029",
+      "title": "如何排查虚拟线程问题？",
+      "difficulty": "medium",
+      "categoryId": "java-concurrent",
+      "tags": [
+        "java",
+        "concurrent"
+      ],
+      "order": 290,
       "hasAnswer": true
     }
   ]
