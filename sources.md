@@ -5,6 +5,7 @@
 | 来源 | 许可证 | 用途 | 是否改动 |
 |---|---|---|---|
 | [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide) | Apache-2.0 | questions/ 下题目与答案的改编基础 | 是（拆分/规范化/精简/去推广，详见 NOTICE） |
+| 自整理面试笔记（作者原创笔记） | 随本仓库 CC-BY-4.0 | v1.2.0 新增题目（JVM/Redis/Spring Cloud/AI 应用与 RAG 及部分基础、场景题）的内容基础 | 是（脱敏、去个性化、标题规范化，详见 NOTICE） |
 
 ## 评估过但**未采用**的来源
 
